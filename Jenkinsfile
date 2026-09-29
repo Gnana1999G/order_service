@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('EassyBuy') {
+                dir('order_service') {
                     sh 'mvn clean package -DskipTests'
                 }
             }
@@ -13,7 +13,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('EassyBuy') {
+                dir('order_service') {
                     sh 'mvn test'
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                dir('EassyBuy') {
+                dir('order_service') {
                     sh '''
                         echo "Stopping old application..."
 
